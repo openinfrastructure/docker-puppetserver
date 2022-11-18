@@ -1,6 +1,8 @@
 #! /bin/bash
+set -euxo pipefail
+
 CA_DIR="${CA_DIR:=/etc/puppetlabs/puppetserver/ca-tls}"
-CA_KEY:="${CA_KEY:=$CA_DIR/tls.key}"
+CA_KEY="${CA_KEY:=$CA_DIR/tls.key}"
 
 # If the CA private key exists, Puppetserver won't start without a
 # CRL/inventory/serial file. Initialize them here.

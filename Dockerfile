@@ -25,4 +25,5 @@ RUN mkdir -p /etc/puppetlabs/puppetserver/ca-tls && \
 USER 1001:1001
 EXPOSE 8140
 
-CMD ["/opt/puppetlabs/server/bin/puppetserver", "foreground"]
+COPY entrypoint.sh /bin/entrypoint.sh
+ENTRYPOINT ["/bin/entrypoint.sh"]
